@@ -76,6 +76,24 @@ h2 {
 
 }
 
+@media (max-width: 480px) {
+  .loginbox {
+    padding: 40px 20px;
+  }
 
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  .loginbox input[type="text"],
+  .loginbox input[type="password"],
+  .loginbox input[type="submit"] {
+    font-size: 0.95rem;
+  }
+
+  .loginbox a {
+    font-size: 0.75rem;
+  }
+}
 
 
