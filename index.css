@@ -63,6 +63,8 @@ h2 {
   font-size:15px;
   cursor:pointer;
   border-radius: 20px;
+  text-align:center;
+  display: block;
 }
 .loginbox input[type="submit"]:hover {
   background-color: #19daba;
@@ -75,6 +77,30 @@ h2 {
   color:rgb(207, 205, 207);
 
 }
+.loginbox a:hover {
+  color:#19daba;
+  transition: 0.5s;
+}
+.form-links {
+  margin-top: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* spacing between the links */
+}
+
+.form-links a {
+  color: rgb(207, 205, 207);
+  font-size: 13px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.form-links a:hover {
+  color: #19daba;
+}
+
 
 @media (max-width: 480px) {
   .loginbox {
