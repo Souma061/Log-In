@@ -1,115 +1,180 @@
 body {
   margin: 0;
   padding: 0;
-  background: url("image/outside-background-32ktam919762ehs0.jpg") no-repeat center center fixed;
+  background: url("https://imgs.search.brave.com/1lP3S7GSqtc_XUzOnLkRHxFAcjTtfscjhX7Mn3cYdyw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9nZXR3/YWxscGFwZXJzLmNv/bS93YWxscGFwZXIv/ZnVsbC81LzYvYS8x/NDQyMDAyLW5hdHVy/ZS13YWxscGFwZXJz/LWZ1bGwtc2NyZWVu/LTE5MjB4MTA4MC1m/b3ItYW5kcm9pZC00/MC5qcGc") no-repeat center center fixed;
   background-size: cover;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: system-ui, sans-serif;
 }
 
-.signupbox {
+.form-box {
   position: absolute;
-  box-sizing: border-box;
   top: 50%;
   left: 50%;
-  backdrop-filter: blur(5px);
   transform: translate(-50%, -50%);
   width: 350px;
   background: rgba(0, 0, 0, 0.5);
-  padding: 80px 40px;
+  backdrop-filter: blur(6px);
+  padding: 30px;
   border-radius: 20px;
-
-
+  box-sizing: border-box;
 }
 
-.signupbox h2 {
+h2 {
   text-align: center;
   color: #19daba;
-  margin: 0;
-  padding: 0 0 20px;
-
-}
-
-.signupbox p {
-  font-weight: bold;
-  color: rgb(207, 205, 207);
-  margin: 0;
-  padding: 0;
-
-}
-
-.signupbox input {
-  width: 100%;
   margin-bottom: 20px;
 }
 
-.signupbox input[type="text"],
-.signupbox input[type="password"],
-.signupbox input[type="email"] {
+label {
+  color: rgb(207, 205, 207);
+  font-weight: bold;
+  font-size: 14px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+input,
+select {
+  width: 100%;
+  background: transparent;
   border: none;
   border-bottom: 1px solid #19daba;
-  background: transparent;
-  height: 40px;
-  font-size: 15px;
-  color: #fff;
+  padding: 8px;
+  font-size: 14px;
+  color: white;
   outline: none;
-
+  margin-bottom: 12px;
 }
 
 ::placeholder {
   color: rgba(255, 255, 255, 0.5);
 }
 
-.signupbox input[type="submit"] {
-  border: none;
-  outline: none;
-  height: 40px;
+.radio-group {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.radio-group label {
+  color: rgb(207, 205, 207);
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+select option {
+  color: black;
+}
+
+.checkbox-group {
+  margin: 12px 0;
+  color: rgb(207, 205, 207);
+  font-size: 13px;
+}
+
+input[type="submit"] {
   background: #e40bc0;
-  color: #fff;
   border-radius: 20px;
+  border: none;
+  height: 40px;
   font-size: 15px;
+  color: white;
   cursor: pointer;
-
-
+  width: 100%;
+  margin-top: 10px;
 }
 
-.signupbox input[type="submit"]:hover {
-  background: #d30a9c;
+input[type="submit"]:hover {
+  background: #19daba;
+  transition: 0.3s;
 }
 
+.form-links {
+  text-align: center;
+  margin-top: 15px;
+}
 
-.signupbox a {
-  text-decoration: none;
+.form-links a {
+  color: rgb(207, 205, 207);
   font-weight: bold;
   font-size: 13px;
-  color: rgb(207, 205, 207);
-  text-align: center;
-  display: block;
-  margin-top: 20px;
+  text-decoration: none;
 }
 
-.signupbox a:hover {
+.form-links a:hover {
   color: #19daba;
-  transition: 0.5s;
 }
 
-@media (max-width:480px) {
-  .signupbox {
+@media (max-width: 480px) {
+  .form-box {
     width: 90%;
-    padding: 40px 20px;
+    padding: 25px 20px;
   }
 
-  .signupbox h2 {
+  h2 {
     font-size: 1.3rem;
   }
 
-  .signupbox input[type="text"],
-  .signupbox input[type="email"],
-  .signupbox input[type="password"],
-  .signupbox input[type="submit"] {
+  label,
+  input,
+  select {
     font-size: 0.95rem;
   }
 
-  .signupbox a {
-    font-size:0.75rem;
+  .radio-group {
+    flex-direction: column;
+    gap: 6px;
   }
+
+  .checkbox-group {
+    font-size: 0.85rem;
+  }
+}
+/* Hide the native radio input */
+.radio-group input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: transparent;
+  margin: 0;
+  font: inherit;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #19daba;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* When checked, show a dot */
+.radio-group input[type="radio"]::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 0.2s transform ease-in-out;
+  background-color: #19daba;
+}
+
+/* Checked state: show the inner dot */
+.radio-group input[type="radio"]:checked::before {
+  transform: scale(1);
+}
+
+/* Hover effect */
+.radio-group input[type="radio"]:hover {
+  box-shadow: 0 0 4px #19daba;
+}
+
+/* Fix label alignment */
+.radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: rgb(207, 205, 207);
 }
